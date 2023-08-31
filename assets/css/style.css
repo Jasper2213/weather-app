@@ -1,0 +1,160 @@
+:root {
+    --text-color: #e9c46a;
+    --background-color: #264653;
+    --button-color: #4CAF50;
+    --card-color: #2a9d8f;
+    --card-backdrop: #d1603d;
+    --input-border-color: #ccc;
+    --button-text-color: white;
+}
+
+body {
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form input {
+    width: 20rem;
+    height: 2rem;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    padding-left: 1rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+form input:not([type="submit"]) {
+    margin: 0 1.5rem 0 0.5rem;
+}
+
+form input[type="submit"] {
+    font-weight: bold;
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+form img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+form img:hover {
+    transform: scale(1.1);
+}
+
+#weather-cards {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+#weather-cards article {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-color);
+    box-shadow: 0 0 10px var(--card-backdrop);
+    position: relative;
+}
+
+#weather-cards article h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+#weather-cards article h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+
+}
+
+#weather-cards article .trash {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+#weather-cards article #weather-image {
+    width: 10rem;
+    height: 10rem;
+}
+
+#weather-cards article p {
+    font-weight: bold;
+    text-align: center;
+}
+
+#weather-cards article .temperature {
+    font-size: 2rem;
+}
+
+#weather-cards article .description::first-letter {
+    text-transform: uppercase;
+}
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer p a {
+    color: var(--text-color);
+}

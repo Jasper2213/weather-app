@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Yet Another Weather App</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <main>
+        <h1>Yet Another Weather App</h1>
+        <h2>A weather app made with the OpenWeatherMap API.</h2>
+        <form>
+            <label for="city">City</label>
+            <input id="city" type="text" name="city">
+
+            <label for="country">Country</label>
+            <input id="country" list="countries" type="text" name="country">
+            <datalist id="countries"></datalist>
+
+            <input type="submit" name="submit" value="Add!">
+            <img id="location-button" src="assets/images/location.png" alt="Use my location" title="Use my location" />
+        </form>
+
+        <section id="weather-cards"></section>
+
+        <template id="weather-card-template">
+            <article>
+                <img class="trash" src="assets/images/trash.png" alt="Remove location" title="Remove location">
+                <h3>City name</h3>
+                <h4>Country</h4>
+                <img id="weather-image" src="https://openweathermap.org/img/w/10d.png" alt="Weather type" title="Weather type">
+                <p class="temperature">Temperature</p>
+                <p class="description">Weather description</p>
+            </article>
+        </template>
+    </main>
+
+    <footer>
+        <p>Created by <a href="https://www.jasperdesnyder.be" target="_blank">Jasper Desnyder</a></p>
+    </footer>
+</body>
+</html>
