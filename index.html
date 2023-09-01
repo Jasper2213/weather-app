@@ -33,13 +33,23 @@
         <section id="weather-cards"></section>
 
         <template id="weather-card-template">
-            <article>
-                <img class="trash" src="assets/images/trash.png" alt="Remove location" title="Remove location">
-                <h3>City name</h3>
-                <h4>Country</h4>
-                <img id="weather-image" src="https://openweathermap.org/img/w/10d.png" alt="Weather type" title="Weather type">
-                <p class="temperature">Temperature</p>
-                <p class="description">Weather description</p>
+            <article class="card">
+                <div class="front">
+                    <img class="trash" src="assets/images/trash.png" alt="Remove location" title="Remove location">
+                    <h3>City name</h3>
+                    <h4>Country</h4>
+                    <img class="weather-image" src="https://openweathermap.org/img/w/10d.png" alt="Weather type" title="Weather type">
+                    <p class="temperature">20°C</p>
+                    <p class="description">Weather description</p>
+                </div>
+                <div class="back">
+                    <p>Rain: <span class="rain">10</span></p>
+                    <p>Humidity: <span class="humidity">10</span></p>
+                    <p>Wind speed: <span class="wind-speed">10</span></p>
+                    <p>Pressure: <span class="pressure">10</span></p>
+                    <p>Sunrise: <span class="sunrise">10</span></p>
+                    <p>Sunset: <span class="sunset">10</span></p>
+                </div>
             </article>
         </template>
     </main>

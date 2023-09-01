@@ -44,19 +44,33 @@ function convertCountryCodeToCountry(countryCode) {
     return countries.filter(c => c.code === countryCode)[0].name;
 }
 
+function convertUnixToTime(unix) {
+    return new Date(unix * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
 function setCardDetails(card, city, country, weather) {
+    // Front
     card.querySelector("article").id = `weather-card-${city}-${country}`
     card.querySelector("h3").innerText = city;
     card.querySelector("h4").innerText = country;
     card.querySelector(".temperature").innerText = `${Math.round(weather.current.temp)}°C`;
     card.querySelector(".description").innerText = weather.current.weather[0].description;
     setImage(card, weather);
+
+    // Back
+    card.querySelector(".wind-speed").innerText = `${weather.daily[0].wind_speed} m/s`;
+    card.querySelector(".humidity").innerText = `${weather.daily[0].humidity}%`;
+    card.querySelector(".pressure").innerText = `${weather.daily[0].pressure} hPa`;
+    card.querySelector(".rain").innerText = `${weather.daily[0].rain || 0} mm`;
+    card.querySelector(".sunrise").innerText = `${convertUnixToTime(weather.daily[0].sunrise)}`;
+    card.querySelector(".sunset").innerText = `${convertUnixToTime(weather.daily[0].sunset)}`;
+
 }
 
 function setImage(card, weather) {
-    card.querySelector("#weather-image").src = `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@4x.png`;
-    card.querySelector("#weather-image").alt = weather.current.weather[0].description;
-    card.querySelector("#weather-image").title = weather.current.weather[0].description;
+    card.querySelector(".weather-image").src = `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@4x.png`;
+    card.querySelector(".weather-image").alt = weather.current.weather[0].description;
+    card.querySelector(".weather-image").title = weather.current.weather[0].description;
 }
 
 function addLocationToLocalStorage(city, country) {
