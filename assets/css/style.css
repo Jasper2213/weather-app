@@ -77,6 +77,14 @@ form img:hover {
     transform: scale(1.1);
 }
 
+form .actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
 #weather-cards {
     display: flex;
     flex-flow: row wrap;
@@ -86,10 +94,35 @@ form img:hover {
     margin: 2rem auto;
 }
 
+@media screen and (max-width: 768px) {
+    #weather-cards {
+        justify-content: center;
+    }
+
+    form {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        margin: auto 1rem;
+    }
+
+    form input:not([type="submit"]) {
+        margin: 0.5rem 0;
+    }
+
+    form input[type="submit"] {
+        margin: 0.5rem 0;
+    }
+
+    form .actions {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
 #weather-cards article {
     width: 17rem;
     height: 20rem;
-    margin: 1rem;
+    margin: 2rem;
     text-align: center;
     background-color: transparent;
     position: relative;
@@ -171,7 +204,7 @@ footer {
     font-size: 0.8rem;
     text-align: center;
     margin-top: 2rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
