@@ -94,7 +94,7 @@ form .actions {
     margin: 2rem auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 745px) {
     #weather-cards {
         justify-content: center;
     }
@@ -107,6 +107,7 @@ form .actions {
 
     form input:not([type="submit"]) {
         margin: 0.5rem 0;
+        width: 95%;
     }
 
     form input[type="submit"] {
